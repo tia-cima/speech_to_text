@@ -16,7 +16,7 @@ while(videoIndex <= nvideo):
     audio = sr.AudioFile('temp_audio/converted_' + str(videoIndex) + '.wav')
     with audio as source:
         audio_file = r.record(source)
-        result = r.recognize_google(audio_file, language='it-IT')
+        result = r.recognize_google(audio_file, language='en-EN')
     if(str(result) != '[]'): # if the transcrition fails you will have a track of what failed
         documentPositive = Document()  
         documentPositive.add_paragraph(str(result))   
